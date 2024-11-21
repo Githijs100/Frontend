@@ -1,0 +1,147 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;  
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+    --color-text: #111;
+    --color-background: #eee;
+}
+
+@font-face {
+    font-family: Audi-type;
+    src: url(/fonts/AudiTypeVF_Lat.woff2);
+}
+
+img { 
+    margin-top: auto;
+    padding: 0px;
+    height: 30px;
+    margin-left: 0px;
+}
+
+.logo { 
+    margin-top: auto;
+    height: 28px;
+    margin-left: 70px;
+}
+
+nav { 
+    margin: 0px;
+    padding: 0%;
+}
+
+ul { 
+    color: #666666;
+    list-style: none;
+    padding: 0;
+    margin: 23px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+li {
+    color: #666666;
+    font-family: Audi-type;
+    font-size: 17px; 
+    margin-bottom: 0px;
+    margin-right: 5px;
+    margin-left: 28px;
+}
+
+ul li:hover {
+    color: black; 
+}
+
+.etron {
+    position: relative;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    filter: brightness(85%) contrast(120%);
+}
+
+.h-etron {
+    position: absolute; 
+    top: 0%;
+    padding-top: 110px;
+    font-size: 40px;
+    font-weight: 400;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    color: white;
+    font-family: Audi-type;
+    letter-spacing: 3px;
+}
+
+h2 { 
+    display: flex;
+    justify-content: center;
+    font-family: Audi-type;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 20px;
+    margin-top: 70px;
+    letter-spacing: 5px;
+}
+
+.p-etron { 
+    position: absolute; 
+    top: 0%;
+    padding-top: 180px;
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    color: white;
+    font-family: Audi-type;
+    letter-spacing: 2px;
+}
+
+.bekijk-a6 { 
+    position: absolute;
+    top: 0%;
+    padding: 18px 50px;
+    margin-top: 220px;
+    margin-left: 100px;
+    font-family: Audi-type;
+    color: black;
+    background-color: white;
+    transition: 500ms;
+}
+
+.bekijk-a6:hover {
+    background-color: #b3b3b3;
+    transition: 500ms;
+}
+
+#balk { 
+    display: block;
+    height: 50px;
+    width: 100%;
+    margin-top: -10px;
+    background-color: black;
+}
+
+.klik-alle-modellen { 
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    font-family: Audi-type;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+
