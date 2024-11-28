@@ -261,6 +261,30 @@ margin-top: 60px;
         font-size: 0px; 
     }
 
+    .groep1 img { 
+        width: 50vh;
+        height: 40vh;
+        margin-left: 20px; 
+        margin-right: 20px;  
+        margin-bottom: -50px;
+        margin-top: 60px;
+        }
+
+        .brandstofverbruik { 
+            padding: 1.5em;
+            color: #666666;
+            margin-left: 20px;
+            font-family: Audi-type;
+            font-size: small;
+            }
+
+            
+
+            video { 
+                width: 100%; 
+                object-fit: cover; /* Zorgt ervoor dat de video proportioneel wordt uitgerekt zonder vervorming */
+            }
+
 }
 
 
