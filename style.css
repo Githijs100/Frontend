@@ -11,18 +11,62 @@
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-    --color-text: #111;
-    --color-background: #eee;
+    --color-text: black;
+    --background-color: white;
+    --color-nav: #666666;
+    --hover-color: black;
+    --theme-color: blue;
+    font-family: Audi-type;
 }
 
 @font-face {
     font-family: Audi-type;
-    src: url(/fonts/AudiTypeVF_Lat.woff2);
+    src: url(../fonts/AudiTypeVF_Lat.woff2);
 }
 
 body { 
-    font-family: Audi-type;
+    color: var(--color-text);
+    background-color: var(--background-color);
 }
+
+.darkmode { 
+    --color-text: white;
+    --background-color: black;
+    --color-nav: white; 
+    --hover-color: rgb(231, 197, 138);
+     font-family: Audi-type;
+}
+
+.darkmode img { 
+    background-color: white;
+}
+
+#thema-switch { 
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+top: 10px;
+left: 20px;
+height: 50px;   
+width: 50px;
+padding: 0;
+border-radius: 50%;
+background-color: var(--theme-color);
+}
+
+
+#thema-switch svg:last-child{
+    display: none;
+}
+
+.darkmode #thema-switch svg:first-child{
+    display: none;
+}
+.darkmode #thema-switch svg:last-child{
+    display: block;
+}
+
 
 img { 
     margin-top: auto;
@@ -53,6 +97,13 @@ width: auto;
 right: 7em;
 }
 
+.account-icoon { 
+position: absolute;
+height: 20px;
+width: auto;
+right: 5em;
+}
+
 nav { 
     margin: 0px;
     margin-bottom: -8px;
@@ -60,7 +111,7 @@ nav {
 }
 
 ul { 
-    color: #666666;
+    color: var(--color-nav);
     list-style: none;
     padding: 0;
     margin: 23px;
@@ -69,7 +120,7 @@ ul {
 }
 
 .hoofd-nav li {
-    color: #666666;
+    color: var(--color-nav);
     font-family: Audi-type;
     font-size: 17px; 
     margin-bottom: 0px;
@@ -78,7 +129,7 @@ ul {
 }
 
 .hoofd-nav a { 
-    color: #666666;
+    color: var(--color-nav);
     font-family: Audi-type;
     font-size: 17px; 
     margin-bottom: 0px;
@@ -88,16 +139,16 @@ ul {
 }
 
 .hoofd-nav a:hover { 
-    color: black;   
+   color: var(--hover-color); 
 }
 
 
 .hoofd-nav li:hover {
-    color: black; 
+    color: var(--hover-color); 
 }
 
 .elektrisch-hoofd-nav li {
-    color: #666666;
+    color: var(--color-nav);
     font-family: Audi-type;
     font-size: 17px; 
     margin-bottom: 0px;
@@ -106,7 +157,7 @@ ul {
 }
 
 .elektrisch-hoofd-nav a { 
-    color: #666666;
+    color: var(--color-nav);
     font-family: Audi-type;
     font-size: 17px; 
     margin-bottom: 0px;
@@ -116,11 +167,13 @@ ul {
 }
 
 .elektrisch-hoofd-nav a:hover { 
-    color: black;   
+    color: var(--hover-color); 
+  
 }
 
 .elektrisch-hoofd-nav li:hover {
-    color: black; 
+    color: var(--hover-color); 
+
 }
 
 h2 { 
@@ -154,13 +207,13 @@ h2 {
     margin-top: 220px;
     margin-left: 100px;
     font-family: Audi-type;
-    color: black;
-    background-color: white;
+    color: var(--color-text);
+    background-color: var(--background-color);
     transition: 500ms;
 }
 
 .bekijk-a6:hover {
-    background-color: #b3b3b3;
+    background-color: #666666;
     transition: 500ms;
 }
 
@@ -173,12 +226,12 @@ h2 {
     padding-bottom: 15px;
     font-family: Audi-type;
     font-weight: 100;
-    color: white;
+    color: black;
     border-style: solid;
     transition: 250ms;
 }
 .configureer-a6:hover { 
-    color: #b3b3b3;
+    color: #666666;
     transition: 250ms;
 }
 
@@ -187,7 +240,7 @@ h2 {
     height: 50px;
     width: 100%;
     margin-top: -10px;
-    background-color: black;
+    background-color: var(--background-color)
 }
 
 .witte-balk { 
@@ -195,7 +248,7 @@ h2 {
     height: 50px;
     width: 100%;
     margin-top: -10px;
-    background-color: white;
+    background-color: var(--background-color);
 }
 
 .klik-alle-modellen { 
@@ -206,11 +259,11 @@ h2 {
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 1px;
-    color: #111;
+    color: var(--color-text);
 }
 
 .klik-alle-modellen:hover {
-color: #4c4c4c;
+color: var(--hover-color); 
 transition: 500ms;
 }
 
@@ -218,7 +271,7 @@ transition: 500ms;
     position: relative;
     background-size: cover;
     text-align: center;
-    color: white;
+    color: var(--color-text);
     width: 100%;
     height: 100vh;
     filter: brightness(85%) contrast(120%);
@@ -242,20 +295,107 @@ transition: 500ms;
     height: 100vh;
 }
 
-.uitgelichte-modellen .a3 {
-    position: absolute;
-    top: 10%;
-    left: 0em;
-    height: 350px;
-    margin-top: 1350px;
-    margin-left: 70vh;
-    height: auto;
-    width: 50vh;
+/* Algemene styling voor de sectie */
+.uitgelichte-modellen {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background-color: var(--background-color);
 }
+
+.achtergrond-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+/* Styling voor de carousel container */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Styling voor de carousel */
+.carousel {
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel li {
+    flex-shrink: 0;
+    width: 300px;
+    height: auto;
+    text-align: center;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel img:hover {
+    transform: scale(1.10);
+}
+
+/* Styling voor de knoppen */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    color: #111;
+}
+
 
 .brandstofverbruik { 
 padding: 1.5em;
-color: #666666;
+color: var(--color-nav);
 margin-left: 100px;
 font-family: Audi-type;
 font-size: small;
@@ -280,7 +420,7 @@ video {
 
 .play-q6 p { 
     position: absolute;
-    color: #e5e5e5;
+    color: white;
     margin-top: 5em;
     font-family: Audi-type;
     letter-spacing: 3px;
@@ -297,14 +437,14 @@ video {
     margin-top: 2160px;
     margin-left: 100px;
     font-family: Audi-type;
-    color: black;
-    background-color: white;
+    color: var(--color-text);
+    background-color: var(--background-color);
     text-decoration: none;
     transition: 500ms;
 }
 
 .bekijk-q6:hover { 
-   background-color: #b3b3b3;
+   background-color: var(--background-color);
    transition: 500ms;
 }
 
@@ -321,6 +461,10 @@ video {
     transition: 500ms;
 }
 
+.groep1 { 
+    margin-bottom: 5em;
+}
+
 .groep1 img { 
 width: 80vh;
 height: 40vh;
@@ -328,7 +472,7 @@ margin-left: 60px;
 margin-bottom: -50px;
 margin-top: 60px;
 filter: brightness(75%);
-
+transition: transform 0.3s ease-in-out;
 }
 
 .groep1 h2 { 
@@ -337,16 +481,23 @@ filter: brightness(75%);
 
 h2.bekijk-audi-q5 {
     position: absolute;
-    color: #e5e5e5;
+    color: white;
     margin-left: 220px;
     margin-top: 300px;
     font-size: 24px;
     letter-spacing: 2px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.groep1 img:hover { 
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out; 
 }
 
 h2.op-de-hoogte{ 
     position: absolute;
-    color: #e5e5e5;
+    color: white;
     margin-left: 900px;
     margin-right: 120px;
     margin-top: -40px;
@@ -356,7 +507,7 @@ h2.op-de-hoogte{
 
 h2.stories-progress { 
     position: absolute;
-    color: #e5e5e5;
+    color: white;
     margin-left: 260px;
     margin-top: 300px;
     font-size: 24px;
@@ -365,7 +516,7 @@ h2.stories-progress {
 
 h2.audi-nieuws {
     position: absolute;
-    color: #e5e5e5;
+    color: white;
     margin-left: 900px;
     margin-top: -40px;
     font-size: 24px;
@@ -376,7 +527,7 @@ h2.audi-nieuws {
     position: relative;
     background-size: cover;
     text-align: center;
-    color: white;
+    color: var(--color-text);
     width: 100%;
     height: 100vh;
     filter: brightness(85%) contrast(120%);
@@ -385,7 +536,7 @@ h2.audi-nieuws {
 .gerelateerde-pagina {
     display: flex;
     justify-content: left;
-    color: #111;
+    color: var(--color-text);
     font-family: Audi-type; 
     font-size: 20px;
     letter-spacing: 2px;
@@ -406,14 +557,13 @@ h2.audi-nieuws {
     font-weight: 400;
     margin-left: 90px;
     margin-top: -800px;
-
 }
 
 .elektrisch-volgens-audi h1{ 
     font-family: Audi-type;
     font-weight: 300;
     font-size: 40px;
-    color:#333333;
+    color: var(--color-text);
     margin-top: 3em;
     margin-bottom: -20px;
     margin-left: 120px;
@@ -423,7 +573,7 @@ h2.audi-nieuws {
 .elektrisch-volgens-audi p { 
     font-family: Audi-type;
     text-align: left;
-    color:#333333;
+    color: var(--color-text);
     margin-top: 3em;
     margin-left: 120px;
     margin-right: 160px;
@@ -440,13 +590,13 @@ h2.audi-nieuws {
     margin-bottom: 20px;
     margin-left: 120px;
     letter-spacing: 3px;
-    color:#333333;
+    color: var(--color-text);
 }
 
 .audi-a6-avant p { 
     font-family: Audi-type;
     text-align: left;
-    color:#333333;
+    color: var(--color-text);
     margin-top: 1em;
     margin-left: 120px;
     margin-right: 160px;
@@ -467,6 +617,7 @@ h2.audi-nieuws {
     flex-direction: column;
     text-align: left;
     margin-left: 170px;
+    font-family: Audi-type;
 }
 
 .avant-list li { 
@@ -479,7 +630,7 @@ margin-left: -40px;
 margin-top: -1em;
 content: url("../images/pijltje.svg");
 width: 10px;
-color: #333333;
+color: var(--color-text);
 font-family: Audi-type;
 }
 
@@ -487,12 +638,14 @@ font-family: Audi-type;
 position:absolute;
 margin-top: 30px;
 margin-left: 140px;
+font-family: Audi-type;
 }
 
 .configureren-avant { 
     position:absolute;
     margin-top: 30px;
     margin-left: 280px;
+    font-family: Audi-type;
 }
 
 .meer-info-avant::after { 
@@ -511,13 +664,13 @@ margin-left: 140px;
     margin-bottom: 20px;
     margin-left: 120px;
     letter-spacing: 3px;
-    color:#333333;
+    color: var(--color-text);
 }
 
 .audi-a6-sportback p {
     font-family: Audi-type;
     text-align: left;
-    color:#333333;
+    color: var(--color-text);
     margin-top: 1em;
     margin-left: 120px;
     margin-right: 160px;
@@ -537,6 +690,7 @@ margin-left: 140px;
     flex-direction: column;
     text-align: left;
     margin-left: 170px;
+    font-family: Audi-type;
 }
 
 .sportback-list li {
@@ -549,7 +703,7 @@ margin-left: 140px;
     margin-top: -1em;
     content: url("../images/pijltje.svg");
     width: 10px;
-    color: #333333;
+    color: var(--color-text);
     font-family: Audi-type;
 }
 
@@ -557,12 +711,14 @@ margin-left: 140px;
 position:absolute;
 margin-top: 30px;
 margin-left: 140px;
+font-family: Audi-type;
 }
 
 .configureren-sportback {
 position:absolute;
 margin-top: 30px;
 margin-left: 280px;
+font-family: Audi-type;
 }
 
 .meer-info-sportback::after { 
@@ -583,14 +739,14 @@ margin-left: 280px;
     margin-bottom: 20px;
     margin-left: 120px;
     letter-spacing: 3px;
-    color:#333333;
+    color: var(--color-text);
 
 }
 
 .audi-s6 p { 
     font-family: Audi-type;
     text-align: left;
-    color:#333333;
+    color: var(--color-text);
     margin-top: 1em;
     margin-left: 120px;
     margin-right: 160px;
@@ -610,6 +766,7 @@ margin-left: 280px;
     flex-direction: column;
     text-align: left;
     margin-left: 170px;
+    font-family: Audi-type;
 }
 
 .s6-list li { 
@@ -630,12 +787,14 @@ margin-left: 280px;
 position:absolute;
 margin-top: 30px;
 margin-left: 140px;
+font-family: Audi-type;
 }
 
 .configureren-s6 { 
 position:absolute;
 margin-top: 30px;
 margin-left: 280px;
+font-family: Audi-type;
 }
 
 .meer-info-s6::after { 
@@ -646,7 +805,33 @@ content: url("../images/pijltje.svg");
 content: url("../images/pijltje.svg");
 }
 
-.scroll-animatie { 
+.meer-elektrisch-rijden { 
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+    margin-bottom: 100px;
+    font-size: 50px;
+    top: 0%;
+    padding: 80px 50px;
+    letter-spacing: 3px;
+    font-family: Audi-type;
+    color: var(--color-text);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease-out;
+    z-index: 100;
+}
+
+.meer-elektrisch-rijden.visible { 
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+.hidden { 
     display: flex;
     justify-content: center;
     margin-top: 300px;
@@ -658,20 +843,16 @@ content: url("../images/pijltje.svg");
     font-family: Audi-type;
     color: white;
     background-color: black;
-}
-
-.scroll-animatie { 
     opacity: 0;
-    transform: translateY(10vh);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease-out;
+    z-index: 100;
 }
 
-.visible { 
+.hidden.visible { 
     opacity: 1;
     transform: translateY(0);
 }
-
-
 
 
 @media screen and (max-width: 375px) {
@@ -779,5 +960,7 @@ video {
 .feedback { 
     top: 4em;
 }
+
+
 
 }
